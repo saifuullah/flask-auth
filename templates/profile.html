@@ -1,0 +1,15 @@
+  
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+      {% for message in messages %}
+          <h2>{{ message }} go to  <a href="{{ url_for('auth.login') }}">Login</a> </h2>
+      {% endfor %}
+  {% endif %}
+{% endwith %}
+  Welcome!!! {{ name }}
+</h1>
+{% endblock %}
